@@ -1,0 +1,51 @@
+﻿@model IEnumerable<KhaoabeKeAjk.Models.DenaPaona>
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Update")
+</p>
+<table class="table">
+    <tr>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.friendName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.givenAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.takenAmount)
+        </th>
+       
+     
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.friendName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.givenAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.takenAmount)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.id  }) |
+             
+            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+          
+        </td>
+    </tr>
+}
+
+</table>
